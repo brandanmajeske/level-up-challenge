@@ -37,7 +37,6 @@ class Projects extends CI_Controller {
     }
 
     public function view($id){
-        print_r($id);
         $this->load->model('projects_model');
         $data = $this->projects_model->getProject($id);
         $this->load->view('header');
