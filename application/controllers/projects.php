@@ -36,4 +36,14 @@ class Projects extends CI_Controller {
         $this->projects_model->updateProject($data);
     }
 
+    public function view($id){
+        print_r($id);
+        $this->load->model('projects_model');
+        $data = $this->projects_model->getProject($id);
+        $this->load->view('header');
+        $this->load->view('project_view', array('data'=> $data));
+        $this->load->view('footer');
+
+    }
+
 } // end Projects

@@ -69,8 +69,9 @@ echo form_open('userhome/editInterests', '', $hidden); ?>
 			echo '<div class="span8 project">';
 
 			$title = $project['title'];
-			$description = $project['description'];
-			$id = $project['id'];
+            $id = $project['id'];
+			$description = substr($project['description'],0,150).'... <a href="'.base_url().'projects/view/'.$id.'"><em class="muted">more <i class="icon-arrow-right"></i></em></a>';
+
 
 			echo "<h4>$title</h4>";
 			echo "<p>$description</p>";

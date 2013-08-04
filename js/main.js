@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    tinymce.init({selector:'textarea'});
 
 	// Public User Profile updates
 	$('#bio_edit_form').hide();
