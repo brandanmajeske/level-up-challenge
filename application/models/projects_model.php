@@ -24,8 +24,20 @@ class Projects_model extends CI_Model {
 			
 			return FALSE;
 		}
+	}// end getProjects (multiple)
 
-	}
+	public function getProject($id){
+		$username = $this->session->userdata('username');
+		$sql = "SELECT * FROM projects WHERE id = ?";
+		$query = $this->db->query($sql, $id, $username);
+
+		if($query->num_rows() > 0){
+		    return $query->result_array();
+		}
+        else {
+            return FALSE;
+        }
+	}//end getProject
 
 	public function addProject($data){
 		$username = $this->session->userdata('username');
@@ -38,6 +50,24 @@ class Projects_model extends CI_Model {
 		if($query){
 			redirect('userhome');
 		}
-	}
+	}// end addProject
+
+    public function updateProject($data){
+        $id = $data['id'];
+        $title = $data['title'];
+        $description = $data['description'];
+
+        // update project in database
+        $newData = array('title' => $title, 'description' => $description);
+        $this->db->where('id',  $id);
+        $query = $this->db->update('projects', $newData);
+
+        if($query) :
+            redirect('userhome');
+        else :
+            echo 'An error occured updating the project';
+        endif;
+
+    }// end updateProject
 
 } // end Projects

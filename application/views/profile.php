@@ -65,14 +65,26 @@ echo form_open('userhome/editInterests', '', $hidden); ?>
 
 		if(!empty($projects)){
 			foreach($projects as $project){
+			echo '<div class="row">';
+			echo '<div class="span8 project">';
+
 			$title = $project['title'];
 			$description = $project['description'];
+			$id = $project['id'];
 
 			echo "<h4>$title</h4>";
 			echo "<p>$description</p>";
+			echo "<a href=".base_url().'projects/edit/'.$id.">Edit Project</a>";
+
+			echo '</div>';
+			echo '</div>';
 			}
 		} else {
+			echo '<div class="row">';
+			echo '<div class="span8">';
 			echo "<h4>Add a new project</h4>";
+			echo '</div>';
+			echo '</div>';
 		}
 		
 
