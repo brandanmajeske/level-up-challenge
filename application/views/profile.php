@@ -1,5 +1,4 @@
 <?php $error = isset($error)? $error :  null; ?>
-<h2>Welcome <?php echo $user_data['username'];?></h2>
 
 <div class="row">
 <div class="span2 pull-right">
@@ -26,13 +25,12 @@ if(!is_null($error )){
 	echo $error['error'];
 	}
 ?>
-
-	<h3 class="page-header">Public Profile</h3>
+	<h3 class="page-header"><?php echo ucfirst($user_data['username']);?>'s Public Profile</h3>
 </div>
 <div class="span8 pull-left">
 <div id="bio">
-<?php echo "<p><strong>Bio:</strong> <br />".$profile[0]['user_bio']."</p>"; ?>
-<a href="#bio_edit" id="bio_edit">Edit</a>
+<?php echo "<h4>Bio:</h4><p>".$profile[0]['user_bio']."</p>"; ?>
+<a href="#bio_edit" id="bio_edit" class="edit-link">Edit</a>
 </div>
 <div id="bio_edit_form">
 <?php 
@@ -47,8 +45,8 @@ echo form_open('userhome/editBio', '', $hidden); ?>
 </div>
 <div class="span8 pull-left">
 <div id="interests">
-<?php echo "<p><strong>Interests:</strong> <br />".$profile[0]['user_interests']."</p>"; ?>
-<a href="#interests_edit" id="interests_edit">Edit</a>
+<?php echo "<h4>Interests:</h4><p>".$profile[0]['user_interests']."</p>"; ?>
+<a href="#interests_edit" id="interests_edit" class="edit-link">Edit</a>
 </div>
 <div id="interests_edit_form">
 <?php 
@@ -59,6 +57,27 @@ echo form_open('userhome/editInterests', '', $hidden); ?>
 	<textarea class="input-block-level" name="user_interests"><?php echo $profile[0]['user_interests']; ?></textarea></label>
 	<input type="submit" class="btn" value="Update"/>
 <?php echo form_close(); ?>
+</div>
+<div clas="span8 pull-left">
+	<a class="btn btn-small pull-right" href="<?php echo base_url().'projects';?>">Add New</a>
+	<h3 class="page-header">Projects</h3>
+	<?php 
+
+		if(!empty($projects)){
+			foreach($projects as $project){
+			$title = $project['title'];
+			$description = $project['description'];
+
+			echo "<h4>$title</h4>";
+			echo "<p>$description</p>";
+			}
+		} else {
+			echo "<h4>Add a new project</h4>";
+		}
+		
+
+	?>
+
 </div>
 </div>
 </div>

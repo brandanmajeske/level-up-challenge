@@ -17,9 +17,10 @@ class UserHome extends CI_Controller {
 		$this->load->library('upload');
 
 		if($this->session->userdata('logged_in')){
+			$projects = $this->listProjects();
 			$this->load->view('header');
 			$profile = $this->profile->getUser($username);
-			$this->load->view('profile', array('user_data' => $user_data, 'profile' => $profile, 'error' => $error));
+			$this->load->view('profile', array('user_data' => $user_data, 'profile' => $profile, 'projects' => $projects, 'error' => $error));
 			$this->load->view('footer');
 		} else {
 			redirect('login');
@@ -45,8 +46,7 @@ class UserHome extends CI_Controller {
 		
 	}
 
-	public function do_upload()
-	{	
+	public function do_upload(){	
 		
 		$config['upload_path'] = './uploads/user_profile_img/';
 		$config['overwrite'] = TRUE;
@@ -63,18 +63,22 @@ class UserHome extends CI_Controller {
 			
 			$this->index($error);
 			
-		}
-		else
-		{
+		} else {
 			$data['username'] = $this->session->userdata('username');
 			$data['filename'] = $_FILES['userfile']['name'];
 			$this->load->model('profile');
 			$this->profile->profilePicUpdate($data);
 
-			//$data = array('upload_data' => $this->upload->data());
+			$data = array('upload_data' => $this->upload->data());
 
-			//redirect('userhome');
+			redirect('userhome');
 		}
+	}
+
+	public function listProjects(){
+		$this->load->model('projects_model');
+		$data = $this->projects_model->getProjects();
+		return $data;
 	}
 
 } // end Home

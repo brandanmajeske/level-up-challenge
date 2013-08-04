@@ -71,4 +71,14 @@ footer {
   margin: 20px 0;
 }
 
-    
+#bio_edit_form, 
+#interests_edit_form, 
+#profile_img_form {
+  display: none;
+}
+
+
+.edit-link{
+  display: block;
+  margin-top: 2em;
+} 
