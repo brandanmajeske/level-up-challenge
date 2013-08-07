@@ -10,12 +10,6 @@ body {
   
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  overflow: visible;
-
-}
 
 /* Wrapper for page content to push down footer */
 .wrap {
@@ -27,7 +21,6 @@ body {
 }
 
 .content {
-  margin-top: 60px;
   margin-bottom: 60px;
 
 }

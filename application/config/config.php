@@ -39,7 +39,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/lucworking/';
+$config['base_url']	= 'http://localhost/luc-working-branch/';
 
 /*
 |--------------------------------------------------------------------------
