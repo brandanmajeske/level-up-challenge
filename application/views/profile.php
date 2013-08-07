@@ -37,9 +37,13 @@ if(!is_null($error )){
 $user = $user_data['username'];
 $hidden = array('username' => $user);
 echo form_open('userhome/editBio', '', $hidden); ?>
+<fieldset>
+	<div class="form-group">
 	<label><strong>Edit Bio:</strong><br />
 	<textarea class="input-block-level" name="user_bio"><?php echo $profile[0]['user_bio']; ?></textarea></label>
-	<input type="submit" class="btn" value="Update"/>
+	</div>
+	<input type="submit" class="btn btn-primary" value="Update"/>
+</fieldset>
 <?php echo form_close(); ?>
 </div>
 </div>
@@ -53,9 +57,13 @@ echo form_open('userhome/editBio', '', $hidden); ?>
 $user = $user_data['username'];
 $hidden = array('username' => $user);
 echo form_open('userhome/editInterests', '', $hidden); ?>
+<fieldset>
+	<div class="form-group">
 	<label><strong>Edit Interests:</strong><br />
 	<textarea class="input-block-level" name="user_interests"><?php echo $profile[0]['user_interests']; ?></textarea></label>
-	<input type="submit" class="btn" value="Update"/>
+	</div>
+	<input type="submit" class="btn btn-primary" value="Update"/>
+</fieldset>
 <?php echo form_close(); ?>
 </div>
 <div clas="col-8 pull-left">
