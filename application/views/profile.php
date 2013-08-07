@@ -1,7 +1,7 @@
 <?php $error = isset($error)? $error :  null; ?>
 
 <div class="row">
-<div class="span2 pull-right">
+<div class="col-2 pull-right">
 		
 		<?php echo '<img class="thumbnail" src="'.base_url().'uploads/user_profile_img/'.$profile[0]['user_image'].'" />';?>
 			<a href="#" id="profile_img">Edit Profile Image</a>
@@ -19,7 +19,7 @@
 			echo "<p>Joined: ".$profile[0]['join_date']."</p>";
 		?>
 	</div>
-<div class="span8">
+<div class="col-8">
 <?php 
 if(!is_null($error )){
 	echo $error['error'];
@@ -27,7 +27,7 @@ if(!is_null($error )){
 ?>
 	<h3 class="page-header"><?php echo ucfirst($user_data['username']);?>'s Public Profile</h3>
 </div>
-<div class="span8 pull-left">
+<div class="col-8 pull-left">
 <div id="bio">
 <?php echo "<h4>Bio:</h4><p>".$profile[0]['user_bio']."</p>"; ?>
 <a href="#bio_edit" id="bio_edit" class="edit-link">Edit</a>
@@ -43,7 +43,7 @@ echo form_open('userhome/editBio', '', $hidden); ?>
 <?php echo form_close(); ?>
 </div>
 </div>
-<div class="span8 pull-left">
+<div class="col-8 pull-left">
 <div id="interests">
 <?php echo "<h4>Interests:</h4><p>".$profile[0]['user_interests']."</p>"; ?>
 <a href="#interests_edit" id="interests_edit" class="edit-link">Edit</a>
@@ -58,7 +58,7 @@ echo form_open('userhome/editInterests', '', $hidden); ?>
 	<input type="submit" class="btn" value="Update"/>
 <?php echo form_close(); ?>
 </div>
-<div clas="span8 pull-left">
+<div clas="col-8 pull-left">
 	<a class="btn btn-small pull-right" href="<?php echo base_url().'projects';?>">Add New</a>
 	<h3 class="page-header">Projects</h3>
 	<?php 
@@ -66,7 +66,7 @@ echo form_open('userhome/editInterests', '', $hidden); ?>
 		if(!empty($projects)){
 			foreach($projects as $project){
 			echo '<div class="row">';
-			echo '<div class="span8 project">';
+			echo '<div class="col-8 project">';
 
 			$title = $project['title'];
             $id = $project['id'];
@@ -79,7 +79,7 @@ echo form_open('userhome/editInterests', '', $hidden); ?>
 			}
 		} else {
 			echo '<div class="row">';
-			echo '<div class="span8">';
+			echo '<div class="col-8">';
 			echo "<h4>Add a new project</h4>";
 			echo '</div>';
 			echo '</div>';
