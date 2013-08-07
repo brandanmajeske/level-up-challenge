@@ -8,11 +8,6 @@ class Login extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 
-		if(isset($this->session)){
-			echo 'user logged in';
-		}
-
-
 	} // end __construct
 
 	public function index(){
