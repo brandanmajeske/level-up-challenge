@@ -10,6 +10,17 @@ class Projects_model extends CI_Model {
 
 	} // end __construct
 
+	public function getLatestProjects(){
+		// Get the last 5 projects in projects table
+		$this->db->order_by('id', 'desc');
+		$query = $this->db->get('projects', 10);
+		if($query->num_rows() == 0) :
+			return FALSE;
+		else :
+			return $query->result();
+		endif;
+		
+	} // end getLatestProjects
 
 	public function getProjects(){	
 		$username = $this->session->userdata('username');

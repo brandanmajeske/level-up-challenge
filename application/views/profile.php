@@ -97,7 +97,7 @@ if(!is_null($error )){
 
 			$title = $project['title'];
             			$id = $project['id'];
-			$description = substr($project['description'],0,135).'... <a href="'.base_url().'projects/view/'.$id.'"><em class="muted">more <span class="glyphicon glyphicon-arrow-right"></span></em></a>';
+			$description = substr($project['description'],0,135).'<a href="'.base_url().'projects/view/'.$id.'"><em class="muted">More <span class="glyphicon glyphicon-arrow-right"></span></em></a>';
 
 			echo "<h4>$title</h4>";
 			echo "<p>$description</p>";
