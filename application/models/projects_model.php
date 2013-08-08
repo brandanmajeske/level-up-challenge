@@ -26,7 +26,16 @@ class Projects_model extends CI_Model {
 		if($query->num_rows() == 0) :
 			return FALSE;
 		else :
-			return $query->result();
+			$rows = $query->result_array();
+			foreach ($rows as $row) {
+				$row['description'] = substr($row['description'], 0, 100);
+				
+			}
+
+			return $rows;
+			
+
+			//return $query->result_array();
 		endif;
 
 		
