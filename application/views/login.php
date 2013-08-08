@@ -8,7 +8,7 @@
 		<?php 
 		$data = array(
 			"type" => "text",
-			"class" => "form-control",
+			"class" => "form-control input-lg",
 			"name" => "username",
 			"required" => true,
 			"value" =>  set_value(),
@@ -24,7 +24,7 @@
 			<?php 
 		$data = array(
 			"type" => "password",
-			"class" => "form-control",
+			"class" => "form-control input-lg",
 			"name" => "password",
 			"required" => true,
 			"value" =>  set_value(),
