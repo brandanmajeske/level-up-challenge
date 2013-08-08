@@ -6,9 +6,12 @@
 			<a href="#" id="profile_img"><span class="glyphicon glyphicon-upload"></span> Upload Profile Image</a>
 			<div id="profile_img_form">
 			<?php echo form_open_multipart('userhome/do_upload'); ?>
-			<input type="file" name="userfile" />
-			<br />
-			<input class="btn btn-small" type="submit" value="upload" />
+			<fieldset>
+				<div class="form-group">
+					<input type="file" name="userfile" />
+					<input class="btn btn-sm btn-primary" type="submit" value="upload" />
+				</div>
+			</fieldset>
 			</form>
 			</div>
 		<?php echo "<p>Username: ".$profile[0]['username']."</p>";
