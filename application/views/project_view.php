@@ -14,7 +14,7 @@ $current_user = strtolower($this->session->userdata('username'));
 <div>
     <?php
     if($current_user == $username) :
-        echo "<a href=".base_url().'projects/edit/'.$id." class='btn'>Edit</a>";
+        echo "<a href=".base_url().'projects/edit/'.$id." class='btn btn-primary'><span class=\"glyphicon glyphicon-edit\"></span> Edit</a>";
     else:
         echo 'they do not match';
     endif;

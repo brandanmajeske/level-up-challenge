@@ -7,8 +7,8 @@
 <input class="form-control input-lg" required type="text" name="title" value="<?php echo set_value('title'); ?>"  /></label>
 </div>
 <div class="form-group">
-<label>Description</label>
-<textarea class="input-block-level" required name="description"><?php echo set_value('description'); ?></textarea>
+<label>Description
+<textarea class="input-block-level" name="description"><?php echo set_value('description'); ?></textarea></label>
 </div>
 <input type="submit" class="btn btn-primary" value="Submit" />
 </fieldset>

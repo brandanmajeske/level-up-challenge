@@ -70,4 +70,12 @@ class Projects_model extends CI_Model {
 
     }// end updateProject
 
+    public function deleteProject($id){
+    	$this->db->where('id', $id);
+    	$query = $this->db->delete('projects');
+    	if($query){
+    		redirect('userhome');
+    	}
+    }
+
 } // end Projects

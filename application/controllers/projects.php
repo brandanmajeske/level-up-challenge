@@ -42,7 +42,11 @@ class Projects extends CI_Controller {
         $this->load->view('header');
         $this->load->view('project_view', array('data'=> $data));
         $this->load->view('footer');
+    }
 
+    public function delete($id){
+    	$this->load->model('projects_model');
+    	$this->projects_model->deleteProject($id);
     }
 
 } // end Projects
