@@ -21,6 +21,11 @@
   
  <div class="navbar">
      <div class="container">
+     <button type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-toggle collapsed">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
   <a class="navbar-brand" href="<?php 
           if($auth_state === "Logout"){
             echo base_url().'home';
@@ -28,8 +33,8 @@
             echo base_url();
           }
           ?>">Level-Up Challenge</a>
-  <ul class="nav navbar-nav">
-
+          <div style="height: 0px;" class="nav-collapse navbar-responsive-collapse collapse">
+          <ul class="nav navbar-nav">
     <li class="<?php if($active == base_url().'home'){
         echo 'active';
       }?>"><a href="<?php echo base_url() . 'home'; ?>">Home</a></li>
@@ -39,8 +44,10 @@
     <li class="<?php if($active == base_url().'contact'){
         echo 'active';
       }?>"><a href="<?php echo base_url() . 'contact'; ?>">Contact</a></li>
-
   </ul>
+  <div class="visible-sm">
+    <p class="navbar-text"><hr /></p>
+  </div>
    <ul class="nav navbar-nav pull-right">
               <?php if($this->session->userdata('logged_in')){ ?>
                     <li class="<?php if($active == base_url().'userhome'){echo 'active';} ?>">
@@ -51,6 +58,7 @@
                   echo 'active';
             }?>"><a href="<?php echo base_url().$auth_controller;?>"><?php echo $auth_state; ?></a></li>
   </ul>
+  </div>
   </div>
 </div>
 
