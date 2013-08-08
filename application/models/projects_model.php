@@ -12,13 +12,23 @@ class Projects_model extends CI_Model {
 
 	public function getLatestProjects(){
 		// Get the last 5 projects in projects table
-		$this->db->order_by('id', 'desc');
+	/*	$this->db->order_by('id', 'desc');
 		$query = $this->db->get('projects', 10);
 		if($query->num_rows() == 0) :
 			return FALSE;
 		else :
 			return $query->result();
+		endif;*/
+		
+		$sql = 'SELECT * FROM projects INNER JOIN user_profiles on projects.username = user_profiles.username ORDER BY id DESC';
+		$query = $this->db->query($sql);
+		
+		if($query->num_rows() == 0) :
+			return FALSE;
+		else :
+			return $query->result();
 		endif;
+
 		
 	} // end getLatestProjects
 

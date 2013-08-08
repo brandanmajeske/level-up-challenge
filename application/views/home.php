@@ -1,4 +1,4 @@
-<h2>This is the home page where home-stuff happens</h2>
+<h2>Level-Up Challenge's Latest Projects</h2>
 
 <!-- Latest Projects -->
 
