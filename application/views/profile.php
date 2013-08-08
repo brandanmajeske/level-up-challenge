@@ -1,8 +1,9 @@
 <?php $error = isset($error)? $error :  null; ?>
-
+<h3 class="page-header"><?php echo ucfirst($user_data['username']);?>'s Public Profile</h3>
 <div class="row">
 <div class="col-4 pull-right">
 		<?php echo '<img class="img-thumbnail" src="'.base_url().'uploads/user_profile_img/'.$profile[0]['user_image'].'" />';?>
+			<div class="clearfix"></div>
 			<a href="#" id="profile_img"><span class="glyphicon glyphicon-upload"></span> Upload Profile Image</a>
 			<div id="profile_img_form">
 			<?php echo form_open_multipart('userhome/do_upload'); ?>
@@ -25,7 +26,6 @@ if(!is_null($error )){
 	echo $error['error'];
 	}
 ?>
-	<h3 class="page-header"><?php echo ucfirst($user_data['username']);?>'s Public Profile</h3>
 </div>
 <div class="col-8 pull-left">
 <div class="panel panel-default" id="bio">
