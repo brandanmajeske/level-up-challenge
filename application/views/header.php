@@ -45,9 +45,6 @@
         echo 'active';
       }?>"><a href="<?php echo base_url() . 'contact'; ?>">Contact</a></li>
   </ul>
-  <div class="visible-sm">
-    <p class="navbar-text"><hr /></p>
-  </div>
    <ul class="nav navbar-nav pull-right">
               <?php if($this->session->userdata('logged_in')){ ?>
                     <li class="<?php if($active == base_url().'userhome'){echo 'active';} ?>">
@@ -65,8 +62,5 @@
 
 
 <div class="container">
-
-
-
     <div class="row">   
       <div class="content col-12"> 

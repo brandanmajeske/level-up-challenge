@@ -71,8 +71,8 @@ class Projects_model extends CI_Model {
 
 	public function addProject($data){
 		$username = $this->session->userdata('username');
-		$title = $data['title'];
-		$description = $data['description'];
+		$title = strip_tags($data['title'], '<h1><h2><h3><h4><h5><h6><p><a><strong><b><i><em><u><font><pre><blockquote>');
+		$description = strip_tags($data['description'], '<h1><h2><h3><h4><h5><h6><p><a><strong><b><i><em><u><font><pre><blockquote>');
 		$sql = "INSERT INTO projects 
 			(`username`, `title`, `description`)
 			values (?,?,?)";
@@ -83,9 +83,9 @@ class Projects_model extends CI_Model {
 	}// end addProject
 
     public function updateProject($data){
-        $id = $data['id'];
-        $title = $data['title'];
-        $description = $data['description'];
+        	$id = $data['id'];
+	$title = strip_tags($data['title'], '<h1><h2><h3><h4><h5><h6><p><a><strong><b><i><em><u><font><pre><blockquote>');
+	$description = strip_tags($data['description'], '<h1><h2><h3><h4><h5><h6><p><a><strong><b><em><i><u><font><pre><blockquote>');
 
         // update project in database
         $newData = array('title' => $title, 'description' => $description);
