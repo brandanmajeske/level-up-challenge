@@ -13,13 +13,6 @@ class Projects_model extends CI_Model {
 
 	public function getLatestProjects(){
 		// Get the last 5 projects in projects table
-	/*	$this->db->order_by('id', 'desc');
-		$query = $this->db->get('projects', 10);
-		if($query->num_rows() == 0) :
-			return FALSE;
-		else :
-			return $query->result();
-		endif;*/
 		
 		$sql = 'SELECT * FROM projects INNER JOIN user_profiles on projects.username = user_profiles.username ORDER BY id DESC';
 		$query = $this->db->query($sql);
@@ -35,8 +28,6 @@ class Projects_model extends CI_Model {
 
 			return $rows;
 			
-
-			//return $query->result_array();
 		endif;
 
 		
@@ -73,7 +64,7 @@ class Projects_model extends CI_Model {
 	public function addProject($data){
 
 		$allowedTags='<p><strong><em><u><hr><strike><figure><figcaption><div><cite><q><dfn><abbr><time>';
-		$allowedTags.='<table><caption><col><thead><tfoot><tr><th>';
+		$allowedTags.='<table><caption><col><thead><tfoot><tr><th><blockquote>';
 		$allowedTags.= '<h1><h2><h3><h4><h5><h6><img><a>';
 	 	$allowedTags.='<li><ol><ul><span><div><br><ins><del>'; 
 		
@@ -92,7 +83,7 @@ class Projects_model extends CI_Model {
     public function updateProject($data){
 
 		$allowedTags='<p><strong><em><u><hr><strike><figure><figcaption><div><cite><q><dfn><abbr><time>';
-		$allowedTags.='<table><caption><col><thead><tfoot><tr><th>';
+		$allowedTags.='<table><caption><col><thead><tfoot><tr><th><blockquote>';
 		$allowedTags.= '<h1><h2><h3><h4><h5><h6><img><a>';
 	 	$allowedTags.='<li><ol><ul><span><div><br><ins><del>'; 
 

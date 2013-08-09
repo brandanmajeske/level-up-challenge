@@ -45,7 +45,7 @@
         echo 'active';
       }?>"><a href="<?php echo base_url() . 'contact'; ?>">Contact</a></li>
   </ul>
-   <ul class="nav navbar-nav pull-right">
+     <ul class="nav navbar-nav pull-right">
               <?php if($this->session->userdata('logged_in')){ ?>
                     <li class="<?php if($active == base_url().'userhome'){echo 'active';} ?>">
                     <a href="<?php echo base_url().'userhome' ?>">User Profile</a>
@@ -54,6 +54,18 @@
             <li class="<?php if($active == base_url().'login'){
                   echo 'active';
             }?>"><a href="<?php echo base_url().$auth_controller;?>"><?php echo $auth_state; ?></a></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right">
+    <li>
+  <form class="navbar-form" action="<?php echo base_url().'projects/search';?>">
+   <div class="input-group">
+      <input type="text" name="search" placeholder="Search..." class="form-control input-sm">
+       <span class="input-group-btn">
+        <button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div><!-- /input-group -->
+  </form>
+  </li>
   </ul>
   </div>
   </div>

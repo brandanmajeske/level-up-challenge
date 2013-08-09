@@ -97,13 +97,13 @@ if(!is_null($error )){
 
 			$title = $project['title'];
             $id = $project['id'];
-			$description = substr($project['description'],0,135).'<a href="'.base_url().'projects/view/'.$id.'"><em class="muted">More <span class="glyphicon glyphicon-arrow-right"></span></em></a>';
-
+			$description = substr($project['description'],0,135);
 			echo '<div class="panel panel-default">';
 		  	echo '<div class="panel-heading">';
 		  		echo "<h4>$title</h4>";
 		  	echo '</div>';
 		  		echo "<p>$description</p>";
+		  		echo '<a href="'.base_url().'projects/view/'.$id.'"><em class="btn btn-primary">More <span class="glyphicon glyphicon-arrow-right"></span></em></a>';
 		  	echo '</div>';
 			echo '<div class="clearfix"></div>';
 			
