@@ -112,4 +112,23 @@ class Projects_model extends CI_Model {
     	}
     }
 
+    public function search($search_term){
+        $search = strip_tags($search_term);
+        $array = array('title' => $search, 'description' => $search);
+        $this->db->select('*');
+        $this->db->from('projects');
+        $this->db->join('user_profiles', 'projects.username = user_profiles.username', 'inner');
+        $this->db->order_by('id', 'DESC');
+        $this->db->or_like($array);
+        $query = $this->db->get();
+
+     if($query->num_rows() > 0){
+	foreach($query->result_array() as $row){
+      	$projects[] = $row;
+	}
+	      return $projects;
+	}  else {
+	   return FALSE;
+	}
+    } // end search
 } // end Projects

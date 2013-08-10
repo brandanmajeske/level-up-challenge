@@ -49,4 +49,20 @@ class Projects extends CI_Controller {
     	$this->projects_model->deleteProject($id);
     }
 
+    public function search(){
+        $search_term = $_POST['search_term'];
+        $this->load->model('projects_model');
+        $data = $this->projects_model->search($search_term);
+       
+        if($data === FALSE) :
+            $data = array('err' => 'Sorry, that search did not return any results');
+        endif;
+       
+        $this->load->view('header');
+        $this->load->view('search_results_view', array('data' => $data));
+        $this->load->view('footer');
+
+
+    }
+
 } // end Projects

@@ -39,7 +39,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://sdw2ua8250zy9/luc-working-branch/';
+$config['base_url']	= 'http://localhost/luc-working-branch/';
 
 /*
 |--------------------------------------------------------------------------
