@@ -1,7 +1,7 @@
 <h2>Level-Up Challenge's Latest Projects</h2>
-
+<div class="row">
 <!-- Latest Projects -->
-
+<div class="content col-9 visible-lg pull-left">
 <?php 
 if(isset($data[0]['title'])) :
 	if(count($data) < 5):
@@ -28,3 +28,25 @@ else:
 	echo "<h4 class='alert alert-info'>No projects to display</h4>";
 endif;
 ?>
+</div>
+<!-- Search Box -->
+<div class="col-3 pull-left visible-lg" style="background-color: green;">
+<div id="sidefollow" style="height: 0;" class="pull-left"></div>
+  <div id="sidebox" style="background-color: pink;" class="pull-left">  
+  <form class="navbar-form" method="post" action="<?php echo base_url().'projects/search';?>">
+   <div class="input-group">
+      <input type="text" name="search_term" placeholder="Search..." class="form-control input-md" required>
+       <span class="input-group-btn">
+        <button class="btn btn-primary btn-md" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div><!-- /input-group -->
+  </form>
+  <h3>Some Sfuff</h3>
+  <ul>
+  	<li>Line Item</li>
+  	<li>Line Item</li>
+  	<li>Line Item</li>
+  </ul>
+  </div>
+  </div>
+</div> <!-- end row -->

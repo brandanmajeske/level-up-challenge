@@ -1,5 +1,9 @@
 $(document).ready(function(){
+    // TinyMCE Text Editor 
     tinymce.init({selector:'textarea'});
+
+    // Sidemenu Follow-script
+        $('#sidebox').jfollow('#sidefollow', 20);
 
 	// Public User Profile updates
 	$('#bio_edit_form').hide();

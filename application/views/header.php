@@ -60,18 +60,5 @@
 </div>
 <!-- Begin Content -->
 <div class="container">
-    <div class="row">  
-<!-- Search Box -->
-  <div class="content col-4 pull-right">  
-  <form class="navbar-form" method="post" action="<?php echo base_url().'projects/search';?>">
-   <div class="input-group">
-      <input type="text" name="search_term" placeholder="Search..." class="form-control input-sm" required>
-       <span class="input-group-btn">
-        <button class="btn btn-primary btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-      </span>
-    </div><!-- /input-group -->
-  </form>
-  </div>
-  </div>
   <div class="row">
 
