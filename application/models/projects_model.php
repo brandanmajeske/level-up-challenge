@@ -71,10 +71,11 @@ class Projects_model extends CI_Model {
 		$username = $this->session->userdata('username');
 		$title = strip_tags($data['title'], $allowedTags);
 		$description = strip_tags($data['description'], $allowedTags);
+		$published = date('n/d/Y');
 		$sql = "INSERT INTO projects 
-			(`username`, `title`, `description`)
-			values (?,?,?)";
-		$query = $this->db->query($sql, array($username, $title, $description));
+			(`username`, `title`, `description`, `published`)
+			values (?,?,?,?)";
+		$query = $this->db->query($sql, array($username, $title, $description, $published));
 		if($query){
 			redirect('userhome');
 		}
@@ -82,17 +83,19 @@ class Projects_model extends CI_Model {
 
     public function updateProject($data){
 
-		$allowedTags='<p><strong><em><u><hr><strike><figure><figcaption><div><cite><q><dfn><abbr><time>';
-		$allowedTags.='<table><caption><col><thead><tfoot><tr><th><blockquote>';
-		$allowedTags.= '<h1><h2><h3><h4><h5><h6><img><a>';
-	 	$allowedTags.='<li><ol><ul><span><div><br><ins><del>'; 
+	$allowedTags='<p><strong><em><u><hr><strike><figure><figcaption><div><cite><q><dfn><abbr><time>';
+	$allowedTags.='<table><caption><col><thead><tfoot><tr><th><blockquote>';
+	$allowedTags.= '<h1><h2><h3><h4><h5><h6><img><a>';
+ 	$allowedTags.='<li><ol><ul><span><div><br><ins><del>'; 
 
-	    $id = $data['id'];
-		$title = strip_tags($data['title'],  $allowedTags);
-		$description = strip_tags($data['description'],  $allowedTags);
+    	$id = $data['id'];
+	$title = strip_tags($data['title'],  $allowedTags);
+	$description = strip_tags($data['description'],  $allowedTags);
+	$published = date('n/d/Y');
+
 
         // update project in database
-        $newData = array('title' => $title, 'description' => $description);
+        $newData = array('title' => $title, 'description' => $description, 'published' =>$published);
         $this->db->where('id',  $id);
         $query = $this->db->update('projects', $newData);
 

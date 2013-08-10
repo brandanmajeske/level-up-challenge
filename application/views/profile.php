@@ -86,7 +86,7 @@ if(!is_null($error )){
 	</div><!-- end interests edit form -->
 </div> <!-- end INTERESTS -->
 </div> <!-- End ROW -->
-<div clas="col-12-lg col-10-sm pull-right">
+<div class="col-12">
 	<h3 class="page-header">Projects  <a class="btn btn-primary btn-sm" title="Add New Project" href="<?php echo base_url().'projects';?>"><strong><span class="glyphicon glyphicon-plus"></span></strong></a></h3>
 	<?php 
 
@@ -114,5 +114,7 @@ if(!is_null($error )){
 			echo '</div>';	
 		}
 	?>
+</div>
+</div>
 </div>
 

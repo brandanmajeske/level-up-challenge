@@ -19,7 +19,7 @@ if(isset($data[0]['title'])) :
 			</span>
 			<img src="<?php echo base_url(). 'uploads/user_profile_img/'.$data[$i]['user_image']; ?>" class="pull-left col-2 img-thumbnail" alt="user-img"/>
 			<div class="clearfix"></div>
-			<?php echo "<p class='text-muted'><em>Author: ".$data[$i]['username']."<br />"."Published On: </em></p>";?>
+			<?php echo "<p class='text-muted'><em>Author: ".$data[$i]['username']."<br />"."Published:".$data[$i]['published']."</em></p>";?>
 			</div>
 
 <?php 
@@ -29,7 +29,7 @@ else:
 endif;
 ?>
 </div>
-<div class="content col-12 visible-md pull-left">
+<div class="content col-12 hidden-lg">
 <?php 
 if(isset($data[0]['title'])) :
 	if(count($data) < 5):

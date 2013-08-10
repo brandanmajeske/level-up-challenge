@@ -6,7 +6,7 @@ $username = strtolower($data[0]['username']);
 $current_user = strtolower($this->session->userdata('username'));
 ?>
 <div class="row">
-    <div class="col-8">
+    <div class="col-12 project">
         <h2><?php echo $title; ?></h2>
         <?php echo $description; ?>
     </div>
