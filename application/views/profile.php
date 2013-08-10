@@ -108,15 +108,11 @@ if(!is_null($error )){
 			echo '<div class="clearfix"></div>';
 			
 			}
-		} else {
-			
+		} else {	
 			echo '<div class="col-10-lg col-8-sm">';
 			echo "<h4>Add a new project</h4>";
-			echo '</div>';
-			
+			echo '</div>';	
 		}
-		
-
 	?>
 </div>
 

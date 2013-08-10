@@ -25,6 +25,9 @@ body {
 
 }
 
+.project:last-child{
+  margin-bottom: 4em;
+}
 
 /* Set the fixed height of the footer here */
 .push,
@@ -35,6 +38,7 @@ footer {
   z-index: 100;
   display: block;
   width: 100%;
+
 }
 footer {
   background-color: #f5f5f5;
@@ -58,8 +62,17 @@ footer {
 
 .container {
   width: auto;
-  max-width: 960px;
+  max-width: 90%;
 }
+
+/*@media (max-width: 1000px) {
+  .conatainer{
+    width: auto;
+    max-width:  80%;
+  }
+}*/
+
+
 .container .credit {
   margin: 20px 0;
 }

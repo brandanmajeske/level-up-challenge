@@ -23,6 +23,16 @@ if(isset($data[0]['title'])) :
 <?php 
 } 
 else: 
-	echo "<div class='alert alert-danger'>$err</p>";
+	echo "<div class='alert alert-danger'>$err</div>";
+echo <<<EOT
+	  <form class="navbar-form" method="post" action="">
+	   <div class="input-group">
+	      <input type="text" name="search_term" placeholder="Search..." class="form-control input-md" required>
+	       <span class="input-group-btn">
+	        <button class="btn btn-primary btn-md" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+	      </span>
+	    </div><!-- /input-group -->
+	  </form>
+EOT;
 endif;
 ?>

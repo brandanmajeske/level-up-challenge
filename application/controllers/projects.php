@@ -55,7 +55,7 @@ class Projects extends CI_Controller {
         $data = $this->projects_model->search($search_term);
        
         if($data === FALSE) :
-            $data = array('err' => 'Sorry, that search did not return any results');
+            $data = array('err' => 'Sorry, that search did not return any results. Try searching for something else.');
         endif;
        
         $this->load->view('header');
