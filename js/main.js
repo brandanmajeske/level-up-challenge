@@ -3,6 +3,8 @@ $(document).ready(function(){
     tinymce.init({selector:'textarea'});
 
     // Sidemenu Follow-script
+        $('#sidebox').css('width', '16.250em');
+        $('#sidefollow').css('height', '0');
         $('#sidebox').jfollow('#sidefollow', 20);
 
 	// Public User Profile updates

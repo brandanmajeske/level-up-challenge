@@ -18,6 +18,7 @@
 		<?php echo "<p>Username: ".$profile[0]['username']."</p>";
 			echo "<p>Name: ".$profile[0]['name']."</p>";
 			echo "<p>Joined: ".$profile[0]['join_date']."</p>";
+			echo '<p><a href="'.base_url().'password_reset">Change Password</a></p>';
 		?>
 	</div>
 <div class="col-8">

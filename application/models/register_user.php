@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
-*	Register User 
+*    Registration Model 
 */
 class Register_user extends CI_Model {
 
@@ -19,6 +19,7 @@ class Register_user extends CI_Model {
 		$email = $data['email'];
 		$first_name = $data['first_name'];
 		$last_name = $data['last_name'];
+		$secret_phrase = $data['secret_phrase'];
 
 		$profile_data = array(
 			"username" => $username,
@@ -27,24 +28,23 @@ class Register_user extends CI_Model {
 			);
 
 		$sql = "INSERT INTO users 
-			(`username`, `email`, `first_name`, `last_name`, `password`, `salt`)
-			values (?,?,?,?,?,?)";
-		$query = $this->db->query($sql, array($username, $email, $first_name, $last_name, $password, $salt));
+			(`username`, `email`, `first_name`, `last_name`, `password`, `salt`, `secret_phrase`)
+			values (?,?,?,?,?,?,?)";
+		$query = $this->db->query($sql, array($username, $email, $first_name, $last_name, $password, $salt, $secret_phrase));
 		$this->createProfile($profile_data);
-		redirect('userhome', $username);
+		redirect('login', $username);
 	}
 
 	private function createProfile($profile_data){
 		$username = $profile_data['username'];
 		$name = $profile_data['name'];
 		$join_date = $profile_data['join_date'];
-		$user_bio = 'Add your user bio...';
-		$user_interests = 'Add some interests...';
-		$user_image = 'temp.png';
+		
 		$sql = "INSERT INTO user_profiles 
-			( `username`,`name`, `join_date`, `user_bio`,`user_interests`, `user_image`) 
-			VALUES (?,?,?,?,?,?)";
-		$query = $this->db->query($sql, array($username, $name, $join_date, $user_bio, $user_interests, $user_image));
+			( `username`,`name`, `join_date`) 
+			VALUES (?,?,?)";
+		$query = $this->db->query($sql, array($username, $name, $join_date));
 	}
-
-} // end Register
+}
+/* End of file register_user.php */
+/* Location: ./application/controllers/register_user.php */

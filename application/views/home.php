@@ -59,8 +59,8 @@ endif;
 </div>
 <!-- Search Box -->
 <div class="col-3 pull-left visible-lg">
-<div id="sidefollow" style="height: 0;" class="pull-left"></div>
-  <div id="sidebox" style="width: 16.250em;" class="pull-left">  
+<div id="sidefollow" class="pull-left"></div>
+  <div id="sidebox" class="pull-left">  
   <form class="navbar-form" method="post" action="<?php echo base_url().'projects/search';?>">
    <div class="input-group">
       <input type="text" name="search_term" placeholder="Search..." class="form-control input-md" required>

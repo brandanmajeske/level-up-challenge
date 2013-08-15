@@ -26,7 +26,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-  <a class="navbar-brand" style="background-color: rgba(0,0,0,.25);" href="<?php 
+  <a class="navbar-brand" href="<?php 
           if($auth_state === "Logout"){
             echo base_url().'home';
           } else {
