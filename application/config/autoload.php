@@ -107,7 +107,7 @@ $autoload['drivers'] = array('session', 'cache');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('form', 'url', 'file');
+$autoload['helper'] = array('form', 'url', 'file', 'htmlpurifier');
 
 
 /*
@@ -156,7 +156,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('authentication');
+$autoload['model'] = array('auth_model');
 
 
 /* End of file autoload.php */

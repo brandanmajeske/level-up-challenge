@@ -36,4 +36,33 @@ class Projects extends CI_Controller {
         $this->projects_model->updateProject($data);
     }
 
+    public function view($id){
+        $this->load->model('projects_model');
+        $data = $this->projects_model->getProject($id);
+        $this->load->view('header');
+        $this->load->view('project_view', array('data'=> $data));
+        $this->load->view('footer');
+    }
+
+    public function delete($id){
+    	$this->load->model('projects_model');
+    	$this->projects_model->deleteProject($id);
+    }
+
+    public function search(){
+        $search_term = $_POST['search_term'];
+        $this->load->model('projects_model');
+        $data = $this->projects_model->search($search_term);
+       
+        if($data === FALSE) :
+            $data = array('err' => 'Sorry, that search did not return any results. Try searching for something else.');
+        endif;
+       
+        $this->load->view('header');
+        $this->load->view('search_results_view', array('data' => $data));
+        $this->load->view('footer');
+
+
+    }
+
 } // end Projects
