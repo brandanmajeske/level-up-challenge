@@ -50,7 +50,7 @@ class UserHome extends CI_Controller {
 		
 		$config['upload_path'] = './uploads/user_profile_img/';
 		$config['overwrite'] = TRUE;
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpeg|jpg|png';
 		$config['max_size']	= '300';
 		$config['max_width']  = '800';
 		$config['max_height']  = '800';

@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    // TinyMCE Text Editor 
+    tinymce.init({selector:'textarea'});
+
+    // Sidemenu Follow-script
+        $('#sidebox').css('width', '16.250em');
+        $('#sidefollow').css('height', '0');
+        $('#sidebox').jfollow('#sidefollow', 20);
 
 	// Public User Profile updates
 	$('#bio_edit_form').hide();

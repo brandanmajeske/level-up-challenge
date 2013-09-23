@@ -1,1 +1,1 @@
-<div class="alert alert-error">Sorry, we were unable to log you in that time. Please try again.</div>
+<div class="alert alert-danger">Sorry, we were unable to log you in that time. Please try again.</div>

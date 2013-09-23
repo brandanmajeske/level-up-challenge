@@ -26,7 +26,9 @@ class Profile extends CI_Model {
 
 	public function bioUpdate($data){ 
 		$user = $data['username'];
-		$user_bio = $data['user_bio'];
+		$user_bio = strip_tags($data['user_bio'], '<p><a><b><em><u><font>');
+		
+		
 
 		$newData = array('user_bio' => $user_bio);
 		$this->db->where('username',  $user);
@@ -39,7 +41,7 @@ class Profile extends CI_Model {
 
 	public function interestsUpdate($data){ 
 		$user = $data['username'];
-		$user_interests = $data['user_interests'];
+		$user_interests = strip_tags($data['user_interests'], '<br /><p><a><b><em><u><font>');
 
 		$newData = array('user_interests' => $user_interests);
 		$this->db->where('username',  $user);
@@ -51,7 +53,7 @@ class Profile extends CI_Model {
 	}
 
 	public function profilePicUpdate($data){
-		$filename = $data['filename'];
+		$filename = strip_tags($data['filename']);
 		$username = $data['username'];
 		
 		$newData = array('user_image' => $filename);

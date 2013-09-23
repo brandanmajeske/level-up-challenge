@@ -1,5 +1,5 @@
- </div> <!-- end span12 -->
-    </div> <!-- end row -->
+</div>
+  </div> <!-- end row -->
   </div><!-- end body container -->
 
 
@@ -7,12 +7,14 @@
   </div> <!-- end wrap -->
     <footer>
       <div class="container">
-        <p class="muted credit">Level-Up Challenge &copy; <?php echo date('Y');?></p>
-      </div>
+        <p class="credit">Level-Up Challenge &copy; <?php echo date('Y');?></p>
+      </div> <!-- end container -->
     </footer>
     <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
     <script src="<?php echo base_url(); ?>js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jqfollow.js"></script>
     <script src="<?php echo base_url(); ?>js/main.js"></script>
   </body>
 </html>
